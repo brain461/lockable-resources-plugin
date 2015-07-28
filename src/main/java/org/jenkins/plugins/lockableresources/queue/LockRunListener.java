@@ -42,7 +42,7 @@ public class LockRunListener extends RunListener<AbstractBuild<?, ?>> {
                             + " as it is parent matrix build");
                     return;
                 }
-		AbstractProject<?, ?> proj = Utils.getProject(build);
+		AbstractProject<?, ?> project = Utils.getProjectOfBuild(build);
 		List<LockableResource> required = new ArrayList<LockableResource>();
 		if (project != null) {
 			LockableResourcesStruct resources = Utils.getResourcesConfigurationForProject(project);
